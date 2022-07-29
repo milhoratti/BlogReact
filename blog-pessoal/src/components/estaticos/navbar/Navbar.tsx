@@ -1,6 +1,8 @@
 import { AppBar, Box, Toolbar, Typography } from "@mui/material";
 
 import React from "react";
+import { Link } from "react-router-dom";
+import "./Navbar.css"
 
 function Navbar() {
     return (
@@ -34,11 +36,14 @@ function Navbar() {
                                 cadastrar tema
                             </Typography>
                         </Box>
-                        <Box mx={1} className='cursor'>
-                            <Typography variant="h6" color="inherit">
-                                logout
-                            </Typography>
-                        </Box>
+                        <Link to="/login" className="text-decorator-none">
+                            <Box mx={1} className='cursor'>
+                                <Typography variant="h6" color="inherit">
+                                    logout
+                                </Typography>
+                            </Box>
+                        </Link>
+
                     </Box>
                 </Toolbar>
             </AppBar>
