@@ -4,7 +4,6 @@ interface User {
     foto?: string | null;
     usuario: string;
     senha: string;
-    token?: string | null;
     
  
  }
