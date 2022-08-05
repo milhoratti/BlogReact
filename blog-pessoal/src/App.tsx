@@ -21,11 +21,11 @@ function App() {
 
           <Route path="/login" element={<Login />} />
 
-          <Route path="/cadastrousuario" element={<CadastroUsuario />} />
+          <Route path="/usuarios" element={<CadastroUsuario />} />
 
-          <Route path="/temas" element={<ListaTema />} />
+          <Route path="/tema" element={<ListaTema />} />
 
-          <Route path="/posts" element={<ListaPostagem />} />
+          <Route path="/postagens" element={<ListaPostagem />} />
 
         </Routes>
       </div>
