@@ -46,7 +46,7 @@ function Home() {
               align="center"
               className="titulo"
             >
-              Expresse aqui os seus pensamentos e opiniões musicais!
+              Expresse aqui os seus pensamentos!
             </Typography>
           </Box>
           <Box display="flex" justifyContent="center">
