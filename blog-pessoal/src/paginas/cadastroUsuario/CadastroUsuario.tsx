@@ -4,6 +4,8 @@ import React, { ChangeEvent, useEffect, useState } from "react";
 import User from "../../models/User";
 import "./CadastroUsuario.css"
 import { cadastroUsuario } from "../../services/Service";
+import {toast} from 'react-toastify';
+
 
 function CadastroUsuario() {
 
@@ -56,34 +58,56 @@ function CadastroUsuario() {
             //Tenta executar o cadastro
             try {
                 await cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
-                alert("Usuário cadastrado com sucesso")
+            
+                toast.success('Usuário cadastrado com sucesso', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
 
                 //Se houver erro, pegue o Erro e retorna uma msg
             } catch (error) {
                 console.log(`Error: ${error}`)
 
                 //Pode modificar a msg de acordo com o erro 
-                alert("Usuário já existente")
+                
+                toast.warning('Usuário já existente', {
+                    position: "top-right",
+                    autoClose: 2000,
+                    hideProgressBar: false,
+                    closeOnClick: true,
+                    pauseOnHover: false,
+                    draggable: false,
+                    theme: "colored",
+                    progress: undefined,
+                });
             }
 
         } else {
-            alert("Insira no miníno 8 caracteres na senha.")    // Mensagem que indica a quantidade minima de caracteres
-
+          // Mensagem que indica a quantidade minima de caracteres
+            toast.warning('Insira no mínimo 8 caracteres na senha', {
+                position: "top-right",
+                autoClose: 2000,
+                hideProgressBar: false,
+                closeOnClick: true,
+                pauseOnHover: false,
+                draggable: false,
+                theme: "colored",
+                progress: undefined,
+            });
+            
             setUser({ ...user, senha: "" }) // Reinicia o campo de Senha
             setConfirmarSenha("")           // Reinicia o campo de Confirmar Senha
         }
     }
 
 
-    // async function onSubmit(e: ChangeEvent<HTMLFormElement>) {
-    //     e.preventDefault()
-    //     if (confirmarSenha == user.senha) {
-    //         cadastroUsuario(`/usuarios/cadastrar`, user, setUserResult)
-    //         alert('Usuario cadastrado com sucesso')
-    //     } else {
-    //         alert('Dados inconsistentes. Favor verificar as informações de cadastro.')
-    //     }
-    // }
+   
 
     return (
         <Grid container direction="row" justifyContent="center" alignItems="center">

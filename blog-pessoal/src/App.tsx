@@ -12,19 +12,23 @@ import CadastroPost from './components/postagens/cadastroPost/CadastroPost';
 import CadastroTema from './components/temas/cadastroTema/CadastroTema';
 import DeletarPostagem from './components/postagens/deletarPostagem/DeletarPostagem';
 import DeletarTema from './components/temas/deletarTema/DeletarTema';
+
 import { Provider } from 'react-redux';
 import store from './store/store';
+
+import { ToastContainer } from 'react-toastify';
+import 'react-toastify/dist/ReactToastify.css';
 
 function App() {
   return (
     <Provider store={store}>
+      <ToastContainer />
     <Router>
       <Navbar />
       <div style={{ minHeight: '100vh' }}>
         <Routes> // Antigo Switch
+          
           <Route path="/" element={<Login />} />
-
-
 
           <Route path="/login" element={<Login />} />
 
